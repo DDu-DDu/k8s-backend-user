@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: k8s-backend-user
-        image: ddudocker/k8s-backend-user:0.0.1-SNAPSHOT
+        image: ddudocker/k8s-backend-user:0.0.4-SNAPSHOT
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
