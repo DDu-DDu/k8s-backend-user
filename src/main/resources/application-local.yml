@@ -5,7 +5,7 @@ spring:
   datasource:
     # 데이터베이스 연결을 위한 URL입니다.
     # 서비스 이름(k8s-external-user-mysql-service)을 사용하여 클러스터 내부에서 통신합니다.
-    url: jdbc:mysql://k8s-external-user-mysql-service:3306/user?serverTimezone=UTC&useSSL=true&autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:13306/user?serverTimezone=UTC&useSSL=true&autoReconnect=true&useUnicode=true&characterEncoding=utf-8
     # 데이터베이스 사용자 이름입니다.
     username: user
     # 데이터베이스 비밀번호입니다.
