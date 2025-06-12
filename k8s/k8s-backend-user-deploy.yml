@@ -16,5 +16,8 @@ spec:
       - name: k8s-backend-user
         image: ddudocker/k8s-backend-user:0.0.4-SNAPSHOT
         imagePullPolicy: Always
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: dev
         ports:
         - containerPort: 8080
