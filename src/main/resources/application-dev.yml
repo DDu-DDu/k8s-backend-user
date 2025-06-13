@@ -1,7 +1,17 @@
+#secrect
 spring:
   config:
-    import: file:/etc/config/application-dev.yml
+    import:
+      - file:/etc/config/application-dev.yml
+      - file:/etc/secret/application-secret.yml
 
+
+#configmap
+#spring:
+#  config:
+#    import: file:/etc/config/application-dev.yml
+
+# dev
 #server:
 #  port: 8080
 #
