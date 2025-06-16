@@ -6,18 +6,20 @@ import java.security.NoSuchAlgorithmException;
 
 public class SecureHashUtils {
     public static String hash(String message) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] hashedBytes = md.digest(message.getBytes(StandardCharsets.UTF_8));
-
-            StringBuilder sb = new StringBuilder();
-            for (byte b : hashedBytes) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Could not find SHA-256 algorithm", e);
-        }
+//  해쉬 설정
+//        try {
+//            MessageDigest md = MessageDigest.getInstance("SHA-256");
+//            byte[] hashedBytes = md.digest(message.getBytes(StandardCharsets.UTF_8));
+//
+//            StringBuilder sb = new StringBuilder();
+//            for (byte b : hashedBytes) {
+//                sb.append(String.format("%02x", b));
+//            }
+//            return sb.toString();
+//        } catch (NoSuchAlgorithmException e) {
+//            throw new RuntimeException("Could not find SHA-256 algorithm", e);
+//        }
+        return message;
     }
 
     public static boolean matches(String message, String hashedMessage) {
