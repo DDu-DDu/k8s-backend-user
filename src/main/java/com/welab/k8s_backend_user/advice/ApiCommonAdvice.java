@@ -23,6 +23,7 @@ public class ApiCommonAdvice {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({BadParameter.class})
     public ApiResponseDto<String> handleBadParameter(BadParameter e) {
+
         e.printStackTrace();
 
         return ApiResponseDto.createError(
@@ -34,6 +35,7 @@ public class ApiCommonAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({NotFound.class})
     public ApiResponseDto<String> handleNotFound(NotFound e) {
+
         e.printStackTrace();
 
         return ApiResponseDto.createError(
@@ -45,6 +47,7 @@ public class ApiCommonAdvice {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({ClientError.class})
     public ApiResponseDto<String> handleClientError(ClientError e) {
+
         e.printStackTrace();
 
         return ApiResponseDto.createError(
@@ -56,6 +59,7 @@ public class ApiCommonAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({NoResourceFoundException.class})
     public ApiResponseDto<String> handleNoResourceFoundException(NoResourceFoundException e) {
+
         e.printStackTrace();
 
         return ApiResponseDto.createError(
@@ -68,8 +72,8 @@ public class ApiCommonAdvice {
     public ApiResponseDto<ParameterErrorDto.FieldList> handleArgumentNotValidException(MethodArgumentNotValidException e) {
         BindingResult result = e.getBindingResult();
         ParameterErrorDto.FieldList fieldList = ParameterErrorDto.FieldList.of(result);
-
         String errorMessage = fieldList.getErrorMessage();
+
         e.printStackTrace();
 
         return ApiResponseDto.createError("ParameterNotValid", errorMessage, fieldList);
@@ -78,6 +82,7 @@ public class ApiCommonAdvice {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler({Exception.class})
     public ApiResponseDto<String > handleException(Exception e) {
+
         e.printStackTrace();
 
         return ApiResponseDto.createError(
